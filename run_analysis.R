@@ -32,11 +32,11 @@ features = read.table(paste(data_folder, "features.txt", sep=""), header = FALSE
 features <- as.vector(features[,2])
 
 # Add column names. Use current feature names for x_data 
-# and "activities"Activity" as column names for y_data
+# And "Activity" as column names for y_data
 colnames(x_data) <- features
 colnames(y_data) <- c('Activity')
 
-# Combine test subject and training subject and add "Subject" as the column name
+# Combine test subject and training subject to be subject_data and add "Subject" as the column name
 test_subject_data = read.table(paste(data_folder, "test/subject_test.txt", sep=""), header = FALSE)
 train_subject_data = read.table(paste(data_folder, "train/subject_train.txt", sep=""), header = FALSE)
 subject_data <- rbind(test_subject_data, train_y_data)
